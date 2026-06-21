@@ -1,0 +1,3 @@
+-- name: Pluto's Challenge 2
+-- description: The official sequel to Pluto's Challenge by Crossbonnie, this time having 2 stars.\n\nPorted by DaMemes\n\nCustom red coin HUD code by Rogergm.
+-- incompatible: romhack

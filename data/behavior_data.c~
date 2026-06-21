@@ -1,0 +1,192 @@
+// Not all fully custom behaviors may be caught and some custom behaviors may have destroyed
+// Some behaviors here aren't actually custom and some behaviors might not be in the romhack
+
+const BehaviorScript bhvSpring_MOP[] = {
+	BEGIN(OBJ_LIST_LEVEL),
+	SET_HITBOX(160, 160),
+	BEGIN_LOOP(),
+		SET_INT(oIntangibleTimer, 0),
+		CALL_NATIVE( Func_Custom_0x802a6dc4),
+		SET_INT(oInteractStatus, 0),
+	END_LOOP(),
+};
+const BehaviorScript Bhv_Custom_0x13000b14[] = {
+	OR_INT(oFlags, 201),
+	LOAD_ANIMATIONS(10022, 50419392),
+	ANIMATE(0),
+	LOAD_COLLISION_DATA(col_castle_door_geo_0xacf2c8),
+	SET_HITBOX(80, 100),
+	SET_INT(oIntangibleTimer, 0),
+	SET_FLOAT(oCollisionDistance, 1000),
+	SET_HOME(),
+	CALL_NATIVE( bhv_door_init),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_door_loop),
+	END_LOOP(),
+};
+const BehaviorScript bhvCheckpoint_Flag_MOP[] = {
+	BEGIN(OBJ_LIST_GENACTOR),
+	OR_INT(oFlags, 65),
+	SET_INT(oInteractType, 64),
+	BEGIN_LOOP(),
+		CALL_NATIVE( Func_Custom_0x806069e0),
+	END_LOOP(),
+};
+const BehaviorScript Bhv_Custom_0x13000920[] = {
+	BILLBOARD(),
+	OR_INT(oFlags, 65),
+	CALL_NATIVE( bhv_yellow_coin_init),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_yellow_coin_loop),
+	END_LOOP(),
+};
+const BehaviorScript bhvNoteblock_MOP[] = {
+	BEGIN(OBJ_LIST_SURFACE),
+	OR_INT(oFlags, 1),
+	SET_HOME(),
+	LOAD_COLLISION_DATA(col_Noteblock_MOP_0xaa6488),
+	SCALE(0, 64),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_thi_huge_island_top_loop),
+		CALL_NATIVE( load_object_collision_model),
+	END_LOOP(),
+};
+const BehaviorScript Bhv_Custom_0x13005770[] = {
+	BEGIN(OBJ_LIST_GENACTOR),
+	OR_INT(oFlags, 9289),
+	SET_HOME(),
+	CALL_NATIVE( Func_Custom_0x8040610c),
+	BEGIN_LOOP(),
+		SET_INT(oIntangibleTimer, 0),
+		CALL_NATIVE( Func_Custom_0x80406138),
+	END_LOOP(),
+};
+const BehaviorScript Bhv_Custom_0x13001488[] = {
+	OR_INT(oFlags, 1),
+	LOAD_COLLISION_DATA(col_purple_switch_geo_0xa8e008),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_purple_switch_loop),
+		CALL_NATIVE( load_object_collision_model),
+	END_LOOP(),
+};
+const BehaviorScript Bhv_Custom_0x13000b10[] = {
+	SET_INT(oInteractType, 4),
+	OR_INT(oFlags, 201),
+	LOAD_ANIMATIONS(10022, 50419392),
+	ANIMATE(0),
+	LOAD_COLLISION_DATA(col_castle_door_geo_0xacf2c8),
+	SET_HITBOX(80, 100),
+	SET_INT(oIntangibleTimer, 0),
+	SET_FLOAT(oCollisionDistance, 1000),
+	SET_HOME(),
+	CALL_NATIVE( bhv_door_init),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_door_loop),
+	END_LOOP(),
+};
+const BehaviorScript bhvSwitchblock_MOP[] = {
+	BEGIN(OBJ_LIST_SURFACE),
+	OR_INT(oFlags, 1),
+	LOAD_COLLISION_DATA(col_Switchblock_MOP_0x7d3058),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_animates_on_floor_switch_press_init),
+	END_LOOP(),
+};
+const BehaviorScript bhvSwitchblock_Switch_MOP[] = {
+	BEGIN(OBJ_LIST_SURFACE),
+	OR_INT(oFlags, 1),
+	LOAD_COLLISION_DATA(col_Switchblock_Switch_MOP_0x7d7348),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_rr_cruiser_wing_init),
+	END_LOOP(),
+};
+const BehaviorScript bhvFlipswitch_Panel_StarSpawn_MOP[] = {
+	BEGIN(OBJ_LIST_GENACTOR),
+	BEGIN_LOOP(),
+		CALL_NATIVE( Func_Custom_0x802a82bc),
+	END_LOOP(),
+};
+const BehaviorScript bhvFlipswitch_Panel_MOP[] = {
+	BEGIN(OBJ_LIST_SURFACE),
+	OR_INT(oFlags, 1),
+	LOAD_COLLISION_DATA(col_Flipswitch_Panel_MOP_0x7daf78),
+	SET_FLOAT(oCollisionDistance, 1024),
+	BEGIN_LOOP(),
+		CALL_NATIVE( Func_Custom_0x802a8238),
+	END_LOOP(),
+};
+const BehaviorScript bhvBeta_Blarrg_MOP[] = {
+	BEGIN(OBJ_LIST_GENACTOR),
+	OR_INT(oFlags, 25673),
+	SET_INTERACT_TYPE(271188096),
+	SET_HITBOX(216, 72),
+	SET_INT(oDamageOrCoinValue, 2),
+	BEGIN_LOOP(),
+		SET_INT(oIntangibleTimer, 0),
+		CALL_NATIVE( bhv_ship_part_3_loop),
+		SET_INT(oInteractStatus, 0),
+	END_LOOP(),
+};
+const BehaviorScript bhvShrink_Platform_MOP[] = {
+	BEGIN(OBJ_LIST_SURFACE),
+	OR_INT(oFlags, 1),
+	LOAD_COLLISION_DATA(col_Shrink_Platform_MOP_0xad3764),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_rotating_platform_loop),
+		CALL_NATIVE( load_object_collision_model),
+	END_LOOP(),
+};
+const BehaviorScript bhvSandBlock_MOP[] = {
+	BEGIN(OBJ_LIST_SURFACE),
+	OR_INT(oFlags, 1),
+	LOAD_COLLISION_DATA(col_SandBlock_MOP_0xaa6488),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_wf_breakable_wall_loop),
+	END_LOOP(),
+};
+const BehaviorScript bhvFlipswap_Platform_MOP[] = {
+	BEGIN(OBJ_LIST_SURFACE),
+	OR_INT(oFlags, 1),
+	LOAD_COLLISION_DATA(col_Flipswap_Platform_MOP_0x7d9d88),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_elevator_init),
+		CALL_NATIVE( load_object_collision_model),
+	END_LOOP(),
+};
+const BehaviorScript Bhv_Custom_0x13001488[] = {
+	OR_INT(oFlags, 1),
+	LOAD_COLLISION_DATA(col_purple_switch_geo_0xa8e008),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_purple_switch_loop),
+		CALL_NATIVE( load_object_collision_model),
+	END_LOOP(),
+};
+const BehaviorScript Bhv_Custom_0x13001488[] = {
+	OR_INT(oFlags, 1),
+	LOAD_COLLISION_DATA(col_purple_switch_geo_0xa8e008),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_purple_switch_loop),
+		CALL_NATIVE( load_object_collision_model),
+	END_LOOP(),
+};
+const BehaviorScript Bhv_Custom_0x13005748[] = {
+	BEGIN(OBJ_LIST_LEVEL),
+	OR_INT(oFlags, 9),
+	SET_INT(oInteractType, 8192),
+	SET_INT(oIntangibleTimer, 0),
+	CALL_NATIVE( Func_Custom_0x804060e0),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_warp_loop),
+	END_LOOP(),
+};
+const BehaviorScript Bhv_Custom_0x13002bd4[] = {
+	OR_INT(oFlags, 8265),
+	LOAD_ANIMATIONS(10022, 100796932),
+	LOAD_COLLISION_DATA(col_whomp_geo_0xa2a36c),
+	ANIMATE(0),
+	SET_OBJ_PHYSICS(0, 65136, 65486, 0, 0, 200, 0, 0),
+	SET_HOME(),
+	BEGIN_LOOP(),
+		CALL_NATIVE( bhv_whomp_loop),
+	END_LOOP(),
+};

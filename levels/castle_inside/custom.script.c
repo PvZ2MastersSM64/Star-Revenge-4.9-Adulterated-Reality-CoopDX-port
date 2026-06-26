@@ -75,6 +75,7 @@ const LevelScript level_castle_inside_entry[] = {
 	    LOAD_MODEL_FROM_GEO(MODEL_RR_TRICKY_TRIANGLES_FRAME3,  rr_geo_0009A0),
 	    LOAD_MODEL_FROM_GEO(MODEL_RR_TRICKY_TRIANGLES_FRAME4,  rr_geo_0009B8),
 	// Unspecified Models
+	LOAD_MODEL_FROM_GEO(15,  brodute_geo),
 	LOAD_MODEL_FROM_GEO(22,  warp_pipe_geo),
 	LOAD_MODEL_FROM_GEO(23,  bubbly_tree_geo),
 	LOAD_MODEL_FROM_GEO(24,  spiky_tree_geo),

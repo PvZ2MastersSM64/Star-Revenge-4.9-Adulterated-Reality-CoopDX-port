@@ -16,6 +16,21 @@ local actions_able_to_wallkick =
     [ACT_FREEFALL] = ACT_FREEFALL
 }
 
+-- Whether the 45 degree wallkick code will be in effect
+local can_wallkick = true
+function toggle_wallkick(msg)
+    if (msg == "on") then djui_chat_message_create("45 Degree Wallkick is on.")
+        can_wallkick = true
+        return true
+    elseif (msg == "off") then djui_chat_message_create("45 Degree Wallkick is off.")
+        can_wallkick = false
+        return true
+    end
+    return false
+end
+
+hook_chat_command('45wallkick', "[on/off] 45 Degree Wallkick toggle", toggle_wallkick)
+
 --This is in degrees
 gGlobalSyncTable.limit = 46
 
@@ -24,7 +39,7 @@ gGlobalSyncTable.limit = 46
 function wallkicks(m)
     if m.playerIndex ~= 0 then return end
 
-    if m.wall ~= nil then
+    if m.wall ~= nil and can_wallkick == true then
         if (m.wall.type == SURFACE_BURNING) then return end
 
         local wallDYaw = (atan2s(m.wall.normal.z, m.wall.normal.x) - (m.faceAngle.y))

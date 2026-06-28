@@ -1,17 +1,14 @@
+gServerSettings.skipIntro = 1
+
 gLevelValues.mushroom1UpHeal = 1
 
-gLevelValues.entryLevel = 44
+gLevelValues.entryLevel = 16
 gLevelValues.exitCastleLevel = 6
 gLevelValues.exitCastleArea = 1
 gLevelValues.exitCastleWarpNode = 10
 
 gLevelValues.metalCapDuration = 750.0
 gLevelValues.wingCapDuration = 360.0
--- It is entirely possible that cap stages do not start with their cap. Set each duration to 1 if this is the case.
-gLevelValues.metalCapDuration = 600.0
-gLevelValues.wingCapDuration = 1200.0
-gLevelValues.vanishCapDuration = 600.0
-
 gLevelValues.wingCapDurationTotwc = 1
 gLevelValues.metalCapDurationCotmc = 1
 gLevelValues.vanishCapDurationVcutm = 1
